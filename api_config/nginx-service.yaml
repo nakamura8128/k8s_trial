@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service                 # Serviceのマニフェスト
+metadata:
+  name: frontend              # Serviceリソースの名前
+  labels:                     # ServiceにつけるLabel
+    app: k8s-trial
+    tier: frontend
+spec:
+  type: NodePort              # Serviceの種別。NodePortはクラスタ外からアクセスできるやつ
+  ports:
+  - port: 80                  # アクセスを受け付けるポート
+  selector:                   # 対象のPodを検索するときのLabel
+    app: k8s-trial
+    tier: frontend

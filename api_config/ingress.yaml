@@ -1,0 +1,12 @@
+apiVersion: extensions/v1beta1
+kind: Ingress                    # Ingressのマニフェスト
+metadata:
+  name: k8s-trial-ingress        # Ingressリソースの名前
+spec:
+  rules:                         # ルーティングのルールの配列
+  - http:
+      paths:
+      - path: /
+        backend:                 # "frontend"Serviceの80番ポートにアクセス
+          serviceName: frontend
+          servicePort: 80
