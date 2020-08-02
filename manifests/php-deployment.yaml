@@ -24,5 +24,3 @@ spec:
         env:                     # 環境変数
         - name: GET_HOSTS_FROM
           value: dns
-        ports:                   # EXPOSEするポートの指定
-        - containerPort: 80
